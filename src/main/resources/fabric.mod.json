@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "id": "pogworld",
+  "version": "${version}",
+  "name": "PogWorld",
+  "description": "MOD_DESCRIPTION",
+  "authors": ["Wurgo"],
+  "contact": {
+    "homepage": "https://github.com/wurgo"
+  },
+  "license": "MIT",
+  "icon": "assets/pogworld/icon.png",
+  "environment": "client",
+  "accessWidener": "pogworld.accesswidener",
+  "mixins": ["pogworld.mixins.json"],
+  "depends": {
+    "minecraft": "1.16.1"
+  }
+}
