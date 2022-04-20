@@ -6,6 +6,12 @@
   "client": [
     "generation.StructuresConfigMixin",
     "generation.StrongholdGeneratorMixin",
+    "generation.ShipwreckGeneratorMixin",
+    "generation.BlockAgeStructureProcessorMixin",
+    "generation.PortalRoomMixin",
+    "generation.SpikeMixin",
+    "generation.ServerWorldMixin",
+    "BiomeSourceMixin",
     "DebugHudMixin"
   ],
   "injectors": {

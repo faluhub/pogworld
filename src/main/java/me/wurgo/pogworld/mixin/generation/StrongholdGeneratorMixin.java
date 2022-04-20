@@ -15,9 +15,18 @@ import java.util.Random;
 @Mixin(StrongholdGenerator.class)
 public class StrongholdGeneratorMixin {
     @Inject(method = "method_14847", at = @At("RETURN"), cancellable = true)
-    private static void pogworld_inject_sg_method_14847_return(Class<? extends StrongholdGenerator.Piece> class_, List<StructurePiece> list, Random random, int i, int j, int k, @Nullable Direction direction, int l, CallbackInfoReturnable<StrongholdGenerator.Piece> cir) {
+    private static void pogworld_inject_sg_14847_return(Class<? extends StrongholdGenerator.Piece> class_, List<StructurePiece> list, Random random, int i, int j, int k, @Nullable Direction direction, int l, CallbackInfoReturnable<StrongholdGenerator.Piece> cir) {
         if (direction != null) {
-            cir.setReturnValue(StrongholdGenerator.PortalRoom.method_14863(list, i, j, k, direction, l));
+            int piece = random.nextInt(3);
+
+            switch (piece) {
+                case 1:
+                    cir.setReturnValue(StrongholdGenerator.PortalRoom.method_14863(list, i, j, k, direction, l));
+                    break;
+                case 2:
+                    cir.setReturnValue(StrongholdGenerator.Library.method_14860(list, random, i, j, k, direction, l));
+                    break;
+            }
         }
     }
 }

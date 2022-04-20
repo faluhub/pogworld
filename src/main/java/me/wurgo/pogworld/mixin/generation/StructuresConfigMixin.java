@@ -1,57 +1,79 @@
 package me.wurgo.pogworld.mixin.generation;
 
-import me.wurgo.pogworld.PogWorld;
+import com.google.common.collect.ImmutableMap;
+import net.minecraft.util.registry.Registry;
+import net.minecraft.world.gen.chunk.StrongholdConfig;
 import net.minecraft.world.gen.chunk.StructureConfig;
 import net.minecraft.world.gen.chunk.StructuresConfig;
 import net.minecraft.world.gen.feature.StructureFeature;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Mutable;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.Map;
-import java.util.Random;
 
 @Mixin(StructuresConfig.class)
 public class StructuresConfigMixin {
     @Shadow @Final private Map<StructureFeature<?>, StructureConfig> structures;
-    private int spacing;
-    private int separation;
+    @Mutable @Shadow @Final public static StrongholdConfig DEFAULT_STRONGHOLD;
+    @Shadow @Final public static ImmutableMap<StructureFeature<?>, StructureConfig> DEFAULT_STRUCTURES;
 
     @Inject(method = "<init>*", at = @At("TAIL"))
     private void pogworld_inject_sc_const_tail(CallbackInfo info) {
         StructureFeature[] excluded = new StructureFeature[] {
                 StructureFeature.STRONGHOLD,
                 StructureFeature.FORTRESS,
-                StructureFeature.BASTION_REMNANT
+                StructureFeature.BASTION_REMNANT,
+                StructureFeature.MINESHAFT,
+                StructureFeature.MONUMENT,
+                StructureFeature.BURIED_TREASURE
         };
 
         for (StructureFeature<?> feature : structures.keySet()) {
             StructureConfig config = structures.get(feature);
-            spacing = config.getSpacing();
-            separation = config.getSeparation();
+            int spacing = config.getSpacing();
+            int separation = config.getSeparation();
 
             if (Arrays.stream(excluded).noneMatch(structureFeature -> feature == structureFeature)) {
-                Random random = new Random();
-                spacing = tryDivide(config.getSpacing()) - random.nextInt(4);
-                separation = tryDivide(config.getSeparation()) - random.nextInt(4);
+                spacing = tryDivide(config.getSpacing());
+                separation = tryDivide(config.getSeparation());
             } else if (feature == StructureFeature.FORTRESS) {
-                spacing = 11;
+                spacing = 10;
                 separation = 2;
             } else if (feature == StructureFeature.BASTION_REMNANT) {
-                spacing = 9;
+                spacing = 8;
                 separation = 2;
+            } else if (feature == StructureFeature.BURIED_TREASURE) {
+                spacing = 2;
+                separation = 1;
             }
 
             if (spacing <= 0) { spacing += -spacing + 1; }
             if (spacing <= separation) { spacing += (separation - spacing) + 1; }
 
-            PogWorld.log(feature.getName() + ": " + spacing);
-            structures.put(feature, new StructureConfig(spacing, separation, config.getSalt()));
+            structures.put(feature, new StructureConfig(spacing + 1, separation, config.getSalt()));
         }
+    }
+
+    @Inject(method = "<clinit>", at = @At("TAIL"))
+    private static void pogworld_inject_sc_static_tail(CallbackInfo ci) {
+        Iterator var0 = Registry.STRUCTURE_FEATURE.iterator();
+
+        StructureFeature structureFeature;
+        do {
+            if (!var0.hasNext()) {
+                DEFAULT_STRONGHOLD = new StrongholdConfig(18, 3, 256);
+                return;
+            }
+
+            structureFeature = (StructureFeature) var0.next();
+        } while(DEFAULT_STRUCTURES.containsKey(structureFeature));
     }
 
     private int tryDivide(int integer) {
