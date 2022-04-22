@@ -13,6 +13,7 @@ import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.util.Arrays;
 import java.util.Iterator;
@@ -21,13 +22,11 @@ import java.util.Map;
 @Mixin(StructuresConfig.class)
 public class StructuresConfigMixin {
     @Shadow @Final private Map<StructureFeature<?>, StructureConfig> structures;
-    @Mutable @Shadow @Final public static StrongholdConfig DEFAULT_STRONGHOLD;
-    @Shadow @Final public static ImmutableMap<StructureFeature<?>, StructureConfig> DEFAULT_STRUCTURES;
 
     @Inject(method = "<init>*", at = @At("TAIL"))
     private void pogworld_inject_sc_const_tail(CallbackInfo info) {
         StructureFeature[] excluded = new StructureFeature[] {
-                StructureFeature.STRONGHOLD,
+                StructureFeature.STRONGHOLD, // this doesn't change anything I don't think
                 StructureFeature.FORTRESS,
                 StructureFeature.BASTION_REMNANT,
                 StructureFeature.MINESHAFT,
@@ -51,8 +50,8 @@ public class StructuresConfigMixin {
                 spacing = 8;
                 separation = 2;
             } else if (feature == StructureFeature.BURIED_TREASURE) {
-                spacing = 2;
-                separation = 1;
+                spacing = 1;
+                separation = 0;
             }
 
             if (spacing <= 0) { spacing += -spacing + 1; }
@@ -60,21 +59,6 @@ public class StructuresConfigMixin {
 
             structures.put(feature, new StructureConfig(spacing + 1, separation, config.getSalt()));
         }
-    }
-
-    @Inject(method = "<clinit>", at = @At("TAIL"))
-    private static void pogworld_inject_sc_static_tail(CallbackInfo ci) {
-        Iterator var0 = Registry.STRUCTURE_FEATURE.iterator();
-
-        StructureFeature structureFeature;
-        do {
-            if (!var0.hasNext()) {
-                DEFAULT_STRONGHOLD = new StrongholdConfig(16, 3, 128);
-                return;
-            }
-
-            structureFeature = (StructureFeature) var0.next();
-        } while(DEFAULT_STRUCTURES.containsKey(structureFeature));
     }
 
     private int tryDivide(int integer) {

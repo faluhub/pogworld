@@ -12,10 +12,12 @@
     "generation.ServerWorldMixin",
     "generation.EndCityFeatureStartMixin",
     "generation.VillageFeatureStartMixin",
+    "generation.StructuresConfigMixin",
     "generation.StrongholdGeneratorMixin",
     "generation.PortalRoomMixin",
-    "generation.StructuresConfigMixin",
-    "BiomeSourceMixin",
+    "generation.StrongholdConfigMixin",
+    "generation.StrongholdFeatureMixin",
+    "generation.ChunkGeneratorMixin",
     "DebugHudMixin"
   ],
   "injectors": {
