@@ -32,7 +32,8 @@ public class StructuresConfigMixin {
                 StructureFeature.BASTION_REMNANT,
                 StructureFeature.MINESHAFT,
                 StructureFeature.MONUMENT,
-                StructureFeature.BURIED_TREASURE
+                StructureFeature.BURIED_TREASURE,
+                StructureFeature.NETHER_FOSSIL
         };
 
         for (StructureFeature<?> feature : structures.keySet()) {
@@ -68,7 +69,7 @@ public class StructuresConfigMixin {
         StructureFeature structureFeature;
         do {
             if (!var0.hasNext()) {
-                DEFAULT_STRONGHOLD = new StrongholdConfig(18, 3, 256);
+                DEFAULT_STRONGHOLD = new StrongholdConfig(16, 3, 128);
                 return;
             }
 

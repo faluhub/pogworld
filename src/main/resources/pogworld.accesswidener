@@ -1,2 +1,4 @@
 accessWidener v1 named
 accessible class net/minecraft/structure/StrongholdGenerator$Piece
+accessible class net/minecraft/structure/EndCityGenerator$Piece
+accessible class net/minecraft/structure/EndCityGenerator$Part

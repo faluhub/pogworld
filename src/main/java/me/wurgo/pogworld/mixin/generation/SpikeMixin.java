@@ -1,5 +1,6 @@
 package me.wurgo.pogworld.mixin.generation;
 
+import me.wurgo.pogworld.PogWorld;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.math.Box;
 import net.minecraft.world.gen.feature.EndSpikeFeature;
@@ -20,9 +21,16 @@ public class SpikeMixin {
 
     @Inject(method = "<init>", at = @At("TAIL"))
     public void pogworld_inject_s_const_tail(int centerX, int centerZ, int radius, int height, boolean bl, CallbackInfo ci) {
-        this.radius = 3;
-        this.height = 91;
+        if (PogWorld.highTower) {
+            this.height = 94;
+            this.radius = 4;
+        } else {
+            this.height = 85;
+            this.radius = 3;
+        }
         this.guarded = false;
         this.boundingBox = new Box(centerX - radius, 0.0D, centerZ - radius, centerX + radius, 256.0D, centerZ + radius);
+
+        PogWorld.highTower = !PogWorld.highTower;
     }
 }
