@@ -6,18 +6,23 @@
   "client": [
     "access.EndCityFeatureAccess",
     "access.EndCityGeneratorAccess",
-    "generation.ShipwreckGeneratorMixin",
+
+    "generation.village.DesertVillageDataMixin",
+    "generation.village.PlainsVillageDataMixin",
+    "generation.village.SavannaVillageDataMixin",
+    "generation.village.SnowyVillageDataMixin",
+    "generation.village.TaigaVillageDataMixin",
+
     "generation.BlockAgeStructureProcessorMixin",
-    "generation.SpikeMixin",
-    "generation.ServerWorldMixin",
     "generation.EndCityFeatureStartMixin",
-    "generation.VillageFeatureStartMixin",
-    "generation.StructuresConfigMixin",
-    "generation.StrongholdGeneratorMixin",
     "generation.PortalRoomMixin",
+    "generation.ServerWorldMixin",
+    "generation.ShipwreckGeneratorMixin",
+    "generation.SpikeMixin",
     "generation.StrongholdConfigMixin",
-    "generation.StrongholdFeatureMixin",
-    "generation.ChunkGeneratorMixin",
+    "generation.StrongholdGeneratorMixin",
+    "generation.StructuresConfigMixin",
+
     "DebugHudMixin"
   ],
   "injectors": {
