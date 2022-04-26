@@ -11,14 +11,10 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(StrongholdConfig.class)
 public class StrongholdConfigMixin {
-    @Mutable @Shadow @Final private int distance;
-    @Mutable @Shadow @Final private int spread;
     @Mutable @Shadow @Final private int count;
 
     @Inject(method = "<init>", at = @At("TAIL"))
     private void pogworld_inject_sc_const_tail(int distance, int spread, int count, CallbackInfo ci) {
-        this.distance = 15;
-        this.spread = 3;
         this.count = 320;
     }
 }
