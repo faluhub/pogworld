@@ -7,21 +7,21 @@
     "access.EndCityFeatureAccess",
     "access.EndCityGeneratorAccess",
 
+    "generation.end.EndCityFeatureStartMixin",
+    "generation.end.EndSpikeFeatureSpikeMixin",
+    "generation.end.ServerPlayerEntityMixin",
+
+    "generation.stronghold.PortalRoomMixin",
+    "generation.stronghold.StrongholdGeneratorMixin",
+
     "generation.village.DesertVillageDataMixin",
     "generation.village.PlainsVillageDataMixin",
     "generation.village.SavannaVillageDataMixin",
     "generation.village.SnowyVillageDataMixin",
     "generation.village.TaigaVillageDataMixin",
 
-    "generation.BlockAgeStructureProcessorMixin",
-    "generation.EndCityFeatureStartMixin",
-    "generation.PortalRoomMixin",
-    "generation.ServerWorldMixin",
     "generation.ShipwreckGeneratorMixin",
-    "generation.SpikeMixin",
-    "generation.StrongholdConfigMixin",
-    "generation.StrongholdGeneratorMixin",
-    "generation.StructuresConfigMixin",
+    "generation.ChunkGeneratorConfigMixin",
 
     "DebugHudMixin"
   ],

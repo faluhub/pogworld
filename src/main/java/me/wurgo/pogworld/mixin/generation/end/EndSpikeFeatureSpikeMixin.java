@@ -1,7 +1,6 @@
-package me.wurgo.pogworld.mixin.generation;
+package me.wurgo.pogworld.mixin.generation.end;
 
 import me.wurgo.pogworld.PogWorld;
-import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.math.Box;
 import net.minecraft.world.gen.feature.EndSpikeFeature;
 import org.spongepowered.asm.mixin.Final;
@@ -13,7 +12,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(EndSpikeFeature.Spike.class)
-public class SpikeMixin {
+public class EndSpikeFeatureSpikeMixin {
     @Mutable @Shadow @Final private int radius;
     @Mutable @Shadow @Final private int height;
     @Mutable @Shadow @Final private boolean guarded;
