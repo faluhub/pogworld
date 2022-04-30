@@ -20,16 +20,16 @@ public class EndSpikeFeatureSpikeMixin {
 
     @Inject(method = "<init>", at = @At("TAIL"))
     public void pogworld_inject_s_const_tail(int centerX, int centerZ, int radius, int height, boolean bl, CallbackInfo ci) {
-        if (PogWorld.highTower) {
-            this.height = 94;
-            this.radius = 4;
-        } else {
+        if (PogWorld.lowTower) {
             this.height = 85;
             this.radius = 3;
+        } else {
+            this.height = 94;
+            this.radius = 4;
         }
         this.guarded = false;
         this.boundingBox = new Box(centerX - radius, 0.0D, centerZ - radius, centerX + radius, 256.0D, centerZ + radius);
 
-        PogWorld.highTower = !PogWorld.highTower;
+        PogWorld.lowTower = !PogWorld.lowTower;
     }
 }

@@ -32,25 +32,16 @@ public abstract class ServerPlayerEntityMixin extends PlayerEntity {
         DimensionType dimensionType = this.dimension;
         if (!(dimensionType == DimensionType.THE_END && newDimension == DimensionType.OVERWORLD)) {
             if (newDimension == DimensionType.THE_END) {
-                ServerWorld serverWorld2 = this.server.getWorld(newDimension);
-                int o = MathHelper.floor(this.getX());
-                int p = MathHelper.floor(this.getY()) - 1;
-                int q = MathHelper.floor(this.getZ());
+                int i = MathHelper.floor(this.getX());
+                int j = MathHelper.floor(this.getY()) - 1;
+                int k = MathHelper.floor(this.getZ());
 
-                for(int t = -2; t <= 4; ++t) {
-                    for(int u = -2; u <= 4; ++u) {
-                        for(int v = -1; v < 15; ++v) {
-                            int w = o + u;
-                            int x = p + v;
-                            int y = q - t;
-                            boolean bl = v < 0;
-                            serverWorld2.setBlockState(new BlockPos(w, x, y), bl ? Blocks.OBSIDIAN.getDefaultState() : Blocks.AIR.getDefaultState());
-                        }
-                    }
-                }
+                BlockPos.iterate(i - 4, j + 1, k - 4, i + 4, j + 15, k + 4).forEach((blockPosx) -> {
+                    world.setBlockState(blockPosx, Blocks.AIR.getDefaultState());
+                });
 
                 float h = this.yaw;
-                this.refreshPositionAndAngles(o, p, q, h, 0.0F);
+                this.refreshPositionAndAngles(i, j, k, h, 0.0F);
                 this.setVelocity(Vec3d.ZERO);
             }
         }

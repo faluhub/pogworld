@@ -12,6 +12,7 @@
     "generation.end.ServerPlayerEntityMixin",
 
     "generation.stronghold.PortalRoomMixin",
+    "generation.stronghold.StrongholdFeatureStartMixin",
     "generation.stronghold.StrongholdGeneratorMixin",
 
     "generation.village.DesertVillageDataMixin",
@@ -20,8 +21,9 @@
     "generation.village.SnowyVillageDataMixin",
     "generation.village.TaigaVillageDataMixin",
 
-    "generation.ShipwreckGeneratorMixin",
     "generation.ChunkGeneratorConfigMixin",
+    "generation.IglooGeneratorMixin",
+    "generation.ShipwreckGeneratorMixin",
 
     "DebugHudMixin"
   ],
