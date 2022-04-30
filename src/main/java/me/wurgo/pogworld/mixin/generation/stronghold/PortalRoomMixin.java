@@ -1,4 +1,4 @@
-package me.wurgo.pogworld.mixin.generation;
+package me.wurgo.pogworld.mixin.generation.stronghold;
 
 import net.minecraft.structure.StrongholdGenerator;
 import org.spongepowered.asm.mixin.Mixin;

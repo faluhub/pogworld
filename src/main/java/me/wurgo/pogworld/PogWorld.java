@@ -11,7 +11,7 @@ public class PogWorld {
     public static final String LOGGER_NAME = MOD_CONTAINER.getMetadata().getName();
     public static Logger LOGGER = LogManager.getLogger(LOGGER_NAME);
 
-    public static boolean highTower;
+    public static boolean lowTower;
 
     public static void log(String message) {
         LOGGER.info(message);

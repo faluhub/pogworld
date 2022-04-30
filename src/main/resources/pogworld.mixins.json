@@ -7,6 +7,20 @@
     "access.EndCityFeatureAccess",
     "access.EndCityGeneratorAccess",
 
+    "generation.bastion.BastionBridgeDataMixin",
+    "generation.bastion.BastionTreasureDataMixin",
+    "generation.bastion.BastionUnitsDataMixin",
+    "generation.bastion.HoglinStableDataMixin",
+
+    "generation.end.EndCityFeatureStartMixin",
+    "generation.end.ServerWorldMixin",
+    "generation.end.EndSpikeFeatureSpikeMixin",
+
+    "generation.stronghold.PortalRoomMixin",
+    "generation.stronghold.StrongholdConfigMixin",
+    "generation.stronghold.StrongholdFeatureStartMixin",
+    "generation.stronghold.StrongholdGeneratorMixin",
+    
     "generation.village.DesertVillageDataMixin",
     "generation.village.PlainsVillageDataMixin",
     "generation.village.SavannaVillageDataMixin",
@@ -14,13 +28,8 @@
     "generation.village.TaigaVillageDataMixin",
 
     "generation.BlockAgeStructureProcessorMixin",
-    "generation.EndCityFeatureStartMixin",
-    "generation.PortalRoomMixin",
-    "generation.ServerWorldMixin",
+    "generation.IglooGeneratorMixin",
     "generation.ShipwreckGeneratorMixin",
-    "generation.SpikeMixin",
-    "generation.StrongholdConfigMixin",
-    "generation.StrongholdGeneratorMixin",
     "generation.StructuresConfigMixin",
 
     "DebugHudMixin"

@@ -1,4 +1,4 @@
-package me.wurgo.pogworld.mixin.generation;
+package me.wurgo.pogworld.mixin.generation.stronghold;
 
 import net.minecraft.world.gen.chunk.StrongholdConfig;
 import org.spongepowered.asm.mixin.Final;
@@ -12,9 +12,11 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(StrongholdConfig.class)
 public class StrongholdConfigMixin {
     @Mutable @Shadow @Final private int count;
+    @Mutable @Shadow @Final private int spread;
 
     @Inject(method = "<init>", at = @At("TAIL"))
     private void pogworld_inject_sc_const_tail(int distance, int spread, int count, CallbackInfo ci) {
+        this.spread = 8;
         this.count = 320;
     }
 }

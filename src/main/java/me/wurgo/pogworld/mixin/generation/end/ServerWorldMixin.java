@@ -1,4 +1,4 @@
-package me.wurgo.pogworld.mixin.generation;
+package me.wurgo.pogworld.mixin.generation.end;
 
 import net.minecraft.block.Blocks;
 import net.minecraft.server.world.ServerWorld;

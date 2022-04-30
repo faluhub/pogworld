@@ -1,4 +1,4 @@
-package me.wurgo.pogworld.mixin.generation;
+package me.wurgo.pogworld.mixin.generation.end;
 
 import me.wurgo.pogworld.mixin.access.EndCityFeatureAccess;
 import me.wurgo.pogworld.mixin.access.EndCityGeneratorAccess;

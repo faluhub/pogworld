@@ -24,7 +24,8 @@ public class StructuresConfigMixin {
                 StructureFeature.BASTION_REMNANT,
                 StructureFeature.MONUMENT,
                 StructureFeature.BURIED_TREASURE,
-                StructureFeature.NETHER_FOSSIL
+                StructureFeature.NETHER_FOSSIL,
+                StructureFeature.RUINED_PORTAL
         };
 
         for (StructureFeature<?> feature : structures.keySet()) {
@@ -37,14 +38,19 @@ public class StructuresConfigMixin {
                 spacing = tryDivide(config.getSpacing());
                 separation = tryDivide(config.getSeparation());
             } else if (feature == StructureFeature.FORTRESS) {
-                spacing = 10;
+                spacing = 9;
                 separation = 2;
             } else if (feature == StructureFeature.BASTION_REMNANT) {
-                spacing = 8;
+                spacing = 7;
                 separation = 2;
             } else if (feature == StructureFeature.BURIED_TREASURE) {
                 spacing = 1;
                 separation = 0;
+                add = false;
+            } else if (feature == StructureFeature.RUINED_PORTAL) {
+                spacing = 11;
+                separation = 4;
+                add = false;
             } else { add = false; }
 
             if (spacing <= 0) { spacing += -spacing + 1; }
