@@ -17,6 +17,7 @@
 ## 1.16 and 1.15:
 - Greatly enhances the amount of structures.
 - The amount of strongholds are multiplied by 2.5. (128 x 2.5 = 320)
+- Strongholds only contain the starter staircase and the portal room.
 - Shipwrecks are always the 3-chest variant.
 - The amount of blacksmiths are increased. (It's basically guaranteed to have one in every village)
 - Abandoned villages are removed.
@@ -29,9 +30,9 @@
 ## 1.16
 - Ruined portals have no crying obsidian.
 - The amount of fletchers in taiga villages are increased. (For flint)
-- Strongholds only contain the starter staircase and the portal room.
 - Bastions are guaranteed to have triple chests. (triple triple for stables, double triple for housing)
 - Treasure bastions are guaranteed to have double chest centre. (for AA)
+- Treasure ramparts are guaranteed to hold all of the possible gold blocks.
 
 ## 1.15
 - Churches spawn more often.
