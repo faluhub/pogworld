@@ -26,6 +26,7 @@
 - The chance of an eye generating in an end portal frame is raised.
 - The area around the end spawn is removed (15 blocks in y, 4 in x), meaning cage spawns are removed.
 - All igloos have a basement.
+- End portal eye amounts are synced across the strongholds in a world.
 
 ## 1.16
 - Ruined portals have no crying obsidian.
