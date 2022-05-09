@@ -25,7 +25,8 @@ public class StructuresConfigMixin {
                 StructureFeature.MONUMENT,
                 StructureFeature.BURIED_TREASURE,
                 StructureFeature.NETHER_FOSSIL,
-                StructureFeature.RUINED_PORTAL
+                StructureFeature.RUINED_PORTAL,
+                StructureFeature.OCEAN_RUIN
         };
 
         for (StructureFeature<?> feature : structures.keySet()) {
@@ -43,10 +44,6 @@ public class StructuresConfigMixin {
             } else if (feature == StructureFeature.BASTION_REMNANT) {
                 spacing = 7;
                 separation = 2;
-            } else if (feature == StructureFeature.BURIED_TREASURE) {
-                spacing = 1;
-                separation = 0;
-                add = false;
             } else if (feature == StructureFeature.RUINED_PORTAL) {
                 spacing = 11;
                 separation = 4;
@@ -55,9 +52,8 @@ public class StructuresConfigMixin {
 
             if (spacing <= 0) { spacing += -spacing + 1; }
             if (spacing <= separation) { spacing += (separation - spacing) + 1; }
-            if (add) { spacing++; }
 
-            structures.put(feature, new StructureConfig(spacing, separation, config.getSalt()));
+            structures.put(feature, new StructureConfig(add ? spacing + 1 : spacing, separation, config.getSalt()));
         }
     }
 
