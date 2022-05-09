@@ -1,7 +1,7 @@
 package me.wurgo.pogworld.mixin.generation.end;
 
-import me.wurgo.pogworld.mixin.access.EndCityFeatureAccess;
-import me.wurgo.pogworld.mixin.access.EndCityGeneratorAccess;
+import me.wurgo.pogworld.access.EndCityFeatureAccess;
+import me.wurgo.pogworld.access.EndCityGeneratorAccess;
 import net.minecraft.structure.EndCityGenerator;
 import net.minecraft.structure.StructureManager;
 import net.minecraft.structure.StructureStart;

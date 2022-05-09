@@ -1,4 +1,4 @@
-package me.wurgo.pogworld.mixin.access;
+package me.wurgo.pogworld.access;
 
 import net.minecraft.world.gen.chunk.ChunkGenerator;
 import net.minecraft.world.gen.feature.EndCityFeature;

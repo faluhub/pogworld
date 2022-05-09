@@ -4,16 +4,14 @@
   "package": "me.wurgo.pogworld.mixin",
   "compatibilityLevel": "JAVA_8",
   "client": [
-    "access.EndCityFeatureAccess",
-    "access.EndCityGeneratorAccess",
-
     "generation.end.EndCityFeatureStartMixin",
     "generation.end.EndSpikeFeatureSpikeMixin",
     "generation.end.ServerPlayerEntityMixin",
 
+    "generation.stronghold.FiveWayCrossingMixin",
     "generation.stronghold.PortalRoomMixin",
+    "generation.stronghold.SpiralStaircaseMixin",
     "generation.stronghold.StrongholdFeatureStartMixin",
-    "generation.stronghold.StrongholdGeneratorMixin",
 
     "generation.village.DesertVillageDataMixin",
     "generation.village.PlainsVillageDataMixin",
@@ -21,10 +19,13 @@
     "generation.village.SnowyVillageDataMixin",
     "generation.village.TaigaVillageDataMixin",
 
+    "generation.BeachBiomeMixin",
     "generation.ChunkGeneratorConfigMixin",
+    "generation.DefaultBiomeFeaturesMixin",
     "generation.IglooGeneratorMixin",
     "generation.ShipwreckGeneratorMixin",
 
+    "CreateWorldScreenMixin",
     "DebugHudMixin"
   ],
   "injectors": {

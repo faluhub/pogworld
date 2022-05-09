@@ -12,7 +12,10 @@
   "icon": "assets/pogworld/icon.png",
   "environment": "client",
   "accessWidener": "pogworld.accesswidener",
-  "mixins": ["pogworld.mixins.json"],
+  "mixins": [
+    "pogworld.mixins.json",
+    "pogworld.accessors.json"
+  ],
   "depends": {
     "minecraft": "1.15.2"
   }

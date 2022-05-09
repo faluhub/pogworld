@@ -46,12 +46,12 @@ public abstract class StrongholdFeatureStartMixin extends StructureStart {
             }
 
             this.setBoundingBoxFromChildren();
-            this.setStrongholdHeight(chunkGenerator.getSeaLevel(), this.random, 10, chunkGenerator);
+            this.setStrongholdHeight(chunkGenerator.getSeaLevel(), this.random, chunkGenerator);
         } while(this.children.isEmpty() || start.field_15283 == null);
     }
 
-    protected void setStrongholdHeight(int i, Random random, int j, ChunkGenerator chunkGenerator) {
-        int k = i - j;
+    protected void setStrongholdHeight(int i, Random random, ChunkGenerator chunkGenerator) {
+        int k = i - 10;
         int l = this.boundingBox.getBlockCountY() + 1;
         if (l < k) {
             l += random.nextInt(k - l);
@@ -60,10 +60,10 @@ public abstract class StrongholdFeatureStartMixin extends StructureStart {
         int m = l - this.boundingBox.maxY;
         this.boundingBox.offset(0, m, 0);
 
-        int randomInt = this.random.nextInt(25);
+        int randomInt = this.random.nextInt(15);
 
         for (StructurePiece structurePiece : this.children) {
-            structurePiece.translate(0, m + (chunkGenerator.getSeaLevel() / 3) + randomInt, 0);
+            structurePiece.translate(0, -(chunkGenerator.getSeaLevel() / 2 + randomInt), 0);
         }
     }
 }
