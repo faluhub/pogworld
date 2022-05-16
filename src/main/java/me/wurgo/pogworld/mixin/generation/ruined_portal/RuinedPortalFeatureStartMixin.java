@@ -1,4 +1,4 @@
-package me.wurgo.pogworld.mixin.generation;
+package me.wurgo.pogworld.mixin.generation.ruined_portal;
 
 import net.minecraft.structure.RuinedPortalStructurePiece;
 import net.minecraft.world.gen.feature.RuinedPortalFeature;

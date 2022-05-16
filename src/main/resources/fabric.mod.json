@@ -6,9 +6,9 @@
   "description": "MOD_DESCRIPTION",
   "authors": ["Wurgo"],
   "contact": {
-    "homepage": "https://github.com/wurgo"
+    "homepage": "https://github.com/wurgo/pogworld"
   },
-  "license": "MIT",
+  "license": "GNU AGPLv3",
   "icon": "assets/pogworld/icon.png",
   "environment": "client",
   "accessWidener": "pogworld.accesswidener",

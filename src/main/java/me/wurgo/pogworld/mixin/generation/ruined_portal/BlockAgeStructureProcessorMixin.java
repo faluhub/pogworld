@@ -1,4 +1,4 @@
-package me.wurgo.pogworld.mixin.generation;
+package me.wurgo.pogworld.mixin.generation.ruined_portal;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.structure.processor.BlockAgeStructureProcessor;

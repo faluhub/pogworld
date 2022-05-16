@@ -4,6 +4,7 @@
   "package": "me.wurgo.pogworld.mixin",
   "compatibilityLevel": "JAVA_8",
   "client": [
+    "generation.bastion.BasaltDeltasBiomeMixin",
     "generation.bastion.BastionBridgeDataMixin",
     "generation.bastion.BastionTreasureDataMixin",
     "generation.bastion.BastionUnitsDataMixin",
@@ -13,22 +14,24 @@
     "generation.end.ServerWorldMixin",
     "generation.end.EndSpikeFeatureSpikeMixin",
 
+    "generation.ruined_portal.BlockAgeStructureProcessorMixin",
+    "generation.ruined_portal.RuinedPortalFeatureStartMixin",
+
     "generation.stronghold.FiveWayCrossingMixin",
     "generation.stronghold.PortalRoomMixin",
     "generation.stronghold.SpiralStaircaseMixin",
     "generation.stronghold.StrongholdConfigMixin",
     "generation.stronghold.StrongholdFeatureStartMixin",
-    
+
     "generation.village.DesertVillageDataMixin",
     "generation.village.PlainsVillageDataMixin",
     "generation.village.SavannaVillageDataMixin",
     "generation.village.SnowyVillageDataMixin",
     "generation.village.TaigaVillageDataMixin",
 
-    "generation.BlockAgeStructureProcessorMixin",
+    "generation.CarverMixin",
     "generation.DefaultBiomeFeaturesMixin",
     "generation.IglooGeneratorMixin",
-    "generation.RuinedPortalFeatureStartMixin",
     "generation.ShipwreckGeneratorMixin",
     "generation.StructuresConfigMixin",
 
