@@ -8,7 +8,7 @@
   "contact": {
     "homepage": "https://github.com/wurgo"
   },
-  "license": "MIT",
+  "license": "GNU AGPLv3",
   "icon": "assets/pogworld/icon.png",
   "environment": "client",
   "accessWidener": "pogworld.accesswidener",

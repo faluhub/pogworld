@@ -17,6 +17,6 @@ public abstract class BeachBiomeMixin extends Biome {
 
     @Inject(method = "<init>", at = @At("TAIL"))
     private void pogworld_inject_bb_const_tail(CallbackInfo ci) {
-        this.addStructureFeature(Feature.BURIED_TREASURE.configure(new BuriedTreasureFeatureConfig(.2F)));
+        this.addStructureFeature(Feature.BURIED_TREASURE.configure(new BuriedTreasureFeatureConfig(.07F)));
     }
 }

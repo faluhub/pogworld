@@ -21,13 +21,12 @@ import static net.minecraft.world.gen.surfacebuilder.SurfaceBuilder.GRAVEL;
 
 @Mixin(DefaultBiomeFeatures.class)
 public class DefaultBiomeFeaturesMixin {
-    @Shadow
-    @Final
-    private static BlockState LAVA;
+    @Shadow @Final private static BlockState LAVA;
+    @Shadow @Final private static BlockState WATER;
 
     @Inject(method = "addOceanCarvers", at = @At("TAIL"))
     private static void pogworld_inject_dbf_addOceanCarvers_tail(Biome biome, CallbackInfo ci) {
-        biome.addCarver(GenerationStep.Carver.LIQUID, Biome.configureCarver(Carver.UNDERWATER_CANYON, new ProbabilityConfig(.1F)));
+        biome.addCarver(GenerationStep.Carver.LIQUID, Biome.configureCarver(Carver.UNDERWATER_CANYON, new ProbabilityConfig(.07F)));
     }
 
     @Inject(method = "addMineables", at = @At("TAIL"))
@@ -35,8 +34,11 @@ public class DefaultBiomeFeaturesMixin {
         biome.addFeature(GenerationStep.Feature.UNDERGROUND_ORES, Feature.ORE.configure(new OreFeatureConfig(OreFeatureConfig.Target.NATURAL_STONE, GRAVEL, 55)).createDecoratedFeature(Decorator.COUNT_RANGE.configure(new RangeDecoratorConfig(8, 0, 0, 256))));
     }
 
-    @Inject(method = "addDefaultLakes", at = @At("TAIL"))
-    private static void pogworld_inject_dbf_addDefaultLakes_tail(Biome biome, CallbackInfo ci) {
-        biome.addFeature(GenerationStep.Feature.LOCAL_MODIFICATIONS, Feature.LAKE.configure(new SingleStateFeatureConfig(LAVA)).createDecoratedFeature(Decorator.LAVA_LAKE.configure(new ChanceDecoratorConfig(160))));
+    @Inject(method = "addDefaultLakes", at = @At("HEAD"), cancellable = true)
+    private static void pogworld_inject_dbf_addDefaultLakes_head(Biome biome, CallbackInfo ci) {
+        ci.cancel();
+
+        biome.addFeature(GenerationStep.Feature.LOCAL_MODIFICATIONS, Feature.LAKE.configure(new SingleStateFeatureConfig(WATER)).createDecoratedFeature(Decorator.WATER_LAKE.configure(new ChanceDecoratorConfig(35))));
+        biome.addFeature(GenerationStep.Feature.LOCAL_MODIFICATIONS, Feature.LAKE.configure(new SingleStateFeatureConfig(LAVA)).createDecoratedFeature(Decorator.LAVA_LAKE.configure(new ChanceDecoratorConfig(20))));
     }
 }

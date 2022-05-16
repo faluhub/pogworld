@@ -20,6 +20,7 @@
     "generation.village.TaigaVillageDataMixin",
 
     "generation.BeachBiomeMixin",
+    "generation.CarverMixin",
     "generation.ChunkGeneratorConfigMixin",
     "generation.DefaultBiomeFeaturesMixin",
     "generation.IglooGeneratorMixin",

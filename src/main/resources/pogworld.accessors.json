@@ -4,6 +4,7 @@
   "package": "me.wurgo.pogworld.access",
   "compatibilityLevel": "JAVA_8",
   "client": [
+    "CarverAccess",
     "EndCityFeatureAccess",
     "EndCityGeneratorAccess",
     "StrongholdGeneratorAccess"
