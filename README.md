@@ -17,7 +17,7 @@
 ## 1.16 and 1.15:
 - Greatly enhances the amount of structures.
 - The amount of strongholds are multiplied by 2.5. (128 x 2.5 = 320)
-- Strongholds only contain the starter staircase and the portal room.
+- Strongholds only contain the starter staircase 2 libraries, and the portal room. `(Library part unreleased)`
 - Shipwrecks are always the 3-chest variant.
 - The amount of blacksmiths are increased. (It's basically guaranteed to have one in every village)
 - Abandoned villages are removed.
@@ -27,6 +27,14 @@
 - The area around the end spawn is removed (15 blocks in y, 4 in x), meaning cage spawns are removed.
 - All igloos have a basement.
 - End portal eye amounts are synced across the strongholds in a world.
+- There are no fake magma ravines. `(Unreleased)`
+- Water pool generation rates are reduced. `(Unreleased)`
+- Lava pool generation rates are increased. `(Unreleased)`
+- Nitwits and baby villagers don't naturally spawn in villages as they generate. `(Unreleased)`
+- Buried treasure generation rates are increased. `(Unreleased)`
+- Gravel patch generation rates are increased. `(Unreleased)`
+- Magma ravine generation rates are increased. `(Unreleased)`
+- Small taiga houses are only the chest variants. `(Unreleased)`
 
 ## 1.16
 - Ruined portals have no crying obsidian.
@@ -34,6 +42,9 @@
 - Bastions are guaranteed to have triple chests. (triple triple for stables, double triple for housing)
 - Treasure bastions are guaranteed to have double chest centre. (for AA)
 - Treasure ramparts are guaranteed to hold all of the possible gold blocks.
+- Bastions generate in the Basalt Delta biomes. `(Unreleased)`
+- Ruined portals only generate above ground. `(Unreleased)`
+
 
 ## 1.15
 - Churches spawn more often.
@@ -59,10 +70,6 @@ Before anyone asks; yes. We do have the permission from the [PogLoot](https://gi
 
 ```
 Q: Does PogWorld change chests' loot?
-A: No.
-```
-```
-Q: Will you be making the mod open source?
 A: No.
 ```
 ```
