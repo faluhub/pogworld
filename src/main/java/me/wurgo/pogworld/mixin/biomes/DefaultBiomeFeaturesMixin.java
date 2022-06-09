@@ -1,4 +1,4 @@
-package me.wurgo.pogworld.mixin.generation;
+package me.wurgo.pogworld.mixin.biomes;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.world.biome.Biome;
@@ -17,12 +17,11 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-import static net.minecraft.world.gen.surfacebuilder.SurfaceBuilder.GRAVEL;
-
 @Mixin(DefaultBiomeFeatures.class)
 public class DefaultBiomeFeaturesMixin {
     @Shadow @Final private static BlockState LAVA;
     @Shadow @Final private static BlockState WATER;
+    @Shadow @Final private static BlockState GRAVEL;
 
     @Inject(method = "addOceanCarvers", at = @At("TAIL"))
     private static void pogworld_inject_dbf_addOceanCarvers_tail(Biome biome, CallbackInfo ci) {

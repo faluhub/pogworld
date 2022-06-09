@@ -4,6 +4,10 @@
   "package": "me.wurgo.pogworld.mixin",
   "compatibilityLevel": "JAVA_8",
   "client": [
+    "biomes.BeachBiomeMixin",
+    "biomes.BiomeSettingsMixin",
+    "biomes.DefaultBiomeFeaturesMixin",
+
     "generation.end.EndCityFeatureStartMixin",
     "generation.end.EndSpikeFeatureSpikeMixin",
     "generation.end.ServerPlayerEntityMixin",
@@ -19,11 +23,11 @@
     "generation.village.SnowyVillageDataMixin",
     "generation.village.TaigaVillageDataMixin",
 
-    "generation.BeachBiomeMixin",
+    "generation.BeehiveTreeDecoratorMixin",
     "generation.CarverMixin",
     "generation.ChunkGeneratorConfigMixin",
-    "generation.DefaultBiomeFeaturesMixin",
     "generation.IglooGeneratorMixin",
+    "generation.PillagerOutpostFeatureMixin",
     "generation.ShipwreckGeneratorMixin",
 
     "CreateWorldScreenMixin",

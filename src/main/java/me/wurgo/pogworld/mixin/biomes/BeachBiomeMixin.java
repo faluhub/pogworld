@@ -1,4 +1,4 @@
-package me.wurgo.pogworld.mixin.generation;
+package me.wurgo.pogworld.mixin.biomes;
 
 import net.minecraft.world.biome.BeachBiome;
 import net.minecraft.world.biome.Biome;
