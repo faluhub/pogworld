@@ -4,7 +4,10 @@
   "package": "me.wurgo.pogworld.mixin",
   "compatibilityLevel": "JAVA_8",
   "client": [
-    "generation.bastion.BasaltDeltasBiomeMixin",
+    "biomes.BasaltDeltasBiomeMixin",
+    "biomes.BiomeSettingsMixin",
+    "biomes.DefaultBiomeFeaturesMixin",
+
     "generation.bastion.BastionBridgeDataMixin",
     "generation.bastion.BastionTreasureDataMixin",
     "generation.bastion.BastionUnitsDataMixin",
@@ -29,9 +32,10 @@
     "generation.village.SnowyVillageDataMixin",
     "generation.village.TaigaVillageDataMixin",
 
+    "generation.BeehiveTreeDecoratorMixin",
     "generation.CarverMixin",
-    "generation.DefaultBiomeFeaturesMixin",
     "generation.IglooGeneratorMixin",
+    "generation.PillagerOutpostFeatureMixin",
     "generation.ShipwreckGeneratorMixin",
     "generation.StructuresConfigMixin",
 

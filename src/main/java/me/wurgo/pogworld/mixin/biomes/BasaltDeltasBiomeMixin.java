@@ -1,4 +1,4 @@
-package me.wurgo.pogworld.mixin.generation.bastion;
+package me.wurgo.pogworld.mixin.biomes;
 
 import net.minecraft.world.biome.BasaltDeltasBiome;
 import net.minecraft.world.biome.Biome;

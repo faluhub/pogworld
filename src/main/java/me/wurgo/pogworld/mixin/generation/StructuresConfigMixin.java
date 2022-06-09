@@ -45,9 +45,8 @@ public class StructuresConfigMixin {
                 spacing = 7;
                 separation = 2;
             } else if (feature == StructureFeature.RUINED_PORTAL) {
-                spacing = 11;
+                spacing = 10;
                 separation = 4;
-                add = false;
             } else { add = false; }
 
             if (spacing <= 0) { spacing += -spacing + 1; }

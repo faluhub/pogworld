@@ -1,4 +1,4 @@
-package me.wurgo.pogworld.mixin.generation;
+package me.wurgo.pogworld.mixin.biomes;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.world.biome.Biome;
@@ -21,9 +21,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class DefaultBiomeFeaturesMixin {
     @Shadow @Final private static BlockState LAVA;
     @Shadow @Final private static BlockState GRAVEL;
-    @Mutable @Shadow @Final public static ConfiguredStructureFeature<BuriedTreasureFeatureConfig, ? extends StructureFeature<BuriedTreasureFeatureConfig>> BURIED_TREASURE;
-
     @Shadow @Final private static BlockState WATER;
+    @Mutable @Shadow @Final public static ConfiguredStructureFeature<BuriedTreasureFeatureConfig, ? extends StructureFeature<BuriedTreasureFeatureConfig>> BURIED_TREASURE;
 
     @Inject(method = "addOceanCarvers", at = @At("TAIL"))
     private static void pogworld_inject_dbf_addOceanCarvers_tail(Biome biome, CallbackInfo ci) {
