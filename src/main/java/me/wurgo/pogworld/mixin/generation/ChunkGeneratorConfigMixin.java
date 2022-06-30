@@ -17,7 +17,6 @@ public class ChunkGeneratorConfigMixin {
     @Shadow protected int oceanMonumentSpacing;
     @Shadow protected int oceanMonumentSeparation;
     @Shadow protected int strongholdCount;
-    @Shadow protected int strongholdSpread;
     @Shadow protected int templeDistance;
     @Mutable @Shadow @Final protected int templeSeparation;
     @Mutable @Shadow @Final protected int shipwreckSpacing;
@@ -26,8 +25,6 @@ public class ChunkGeneratorConfigMixin {
     @Mutable @Shadow @Final protected int endCitySeparation;
     @Shadow protected int mansionDistance;
     @Mutable @Shadow @Final protected int mansionSeparation;
-
-    @Shadow protected int strongholdDistance;
 
     @Inject(method = "<init>", at = @At("TAIL"))
     private void pogworld_inject_cgc_const_tail(CallbackInfo ci) {
@@ -40,9 +37,7 @@ public class ChunkGeneratorConfigMixin {
 
         this.shipwreckSpacing += 2; this.shipwreckSeparation += 2;
 
-        this.strongholdDistance = 20;
         this.strongholdCount = 320;
-        this.strongholdSpread = 8;
     }
 
     @Inject(method = "getTempleSeparation", at = @At("RETURN"), cancellable = true)

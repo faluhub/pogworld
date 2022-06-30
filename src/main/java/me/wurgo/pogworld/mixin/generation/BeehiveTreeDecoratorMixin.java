@@ -15,6 +15,6 @@ public class BeehiveTreeDecoratorMixin {
 
     @Inject(method = "<init>(F)V", at = @At("TAIL"))
     private void pogworld_inject_btd_const_tail(float chance, CallbackInfo ci) {
-        this.chance += 10;
+        this.chance *= 10;
     }
 }
