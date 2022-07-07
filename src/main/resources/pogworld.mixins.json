@@ -4,6 +4,10 @@
   "package": "me.wurgo.pogworld.mixin",
   "compatibilityLevel": "JAVA_8",
   "client": [
+    "biomes.layers.AddBambooJungleLayerMixin",
+    "biomes.layers.AddMushroomIslandLayerMixin",
+    "biomes.layers.SetBaseBiomesLayerMixin",
+
     "biomes.BasaltDeltasBiomeMixin",
     "biomes.BiomeSettingsMixin",
     "biomes.DefaultBiomeFeaturesMixin",
