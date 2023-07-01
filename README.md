@@ -1,3 +1,5 @@
+# Archived because it is no longer being maintained or worked on.
+
 # PogWorld
 
 ### Alters structure generation and adds benefits to world generation. 
